@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{seoTitle}}</title>
+    {{#if includeSEO}}
+    <meta name="description" content="{{seoDescription}}">
+    <meta property="og:title" content="{{businessName}} - Your Premier Shopping Destination">
+    <meta property="og:description" content="{{seoDescription}}">
+    <meta property="og:type" content="website">
+    {{/if}}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: {{primaryColor}};
+            --secondary-color: {{secondaryColor}};
+        }
+        .primary-bg { background-color: var(--primary-color); }
+        .primary-text { color: var(--primary-color); }
+        .secondary-bg { background-color: var(--secondary-color); }
+        .secondary-text { color: var(--secondary-color); }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    {{#if logo}}
+                    <img src="{{logo}}" alt="{{businessName}} Logo" class="h-10 w-auto mr-3">
+                    {{/if}}
+                    <span class="text-2xl font-bold primary-text">{{businessName}}</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:primary-text transition-colors">Home</a>
+                    <a href="#products" class="text-gray-700 hover:primary-text transition-colors">Products</a>
+                    <a href="#about" class="text-gray-700 hover:primary-text transition-colors">About</a>
+                    <a href="#contact" class="text-gray-700 hover:primary-text transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-search text-gray-600 cursor-pointer hover:primary-text"></i>
+                    <i class="fas fa-shopping-bag text-gray-600 cursor-pointer hover:primary-text"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 pb-16 primary-bg text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px]">
+                <div>
+                    <h1 class="text-5xl font-bold mb-6 leading-tight">
+                        Welcome to <span class="text-yellow-300">{{businessName}}</span>
+                    </h1>
+                    <p class="text-xl mb-8 opacity-90 leading-relaxed">{{businessDescription}}</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-white primary-text px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Shop Now
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:primary-text transition-colors">
+                            View Catalog
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:text-right">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Store Interior" class="rounded-lg shadow-2xl w-full max-w-lg mx-auto lg:mx-0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Products</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover our handpicked selection of quality products</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Product 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Featured Item 1</h3>
+                        <p class="text-gray-600 mb-4">High-quality product with excellent features</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold primary-text">$99.99</span>
+                            <button class="secondary-bg text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Product 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Featured Item 2</h3>
+                        <p class="text-gray-600 mb-4">Premium product for discerning customers</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold primary-text">$149.99</span>
+                            <button class="secondary-bg text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Product 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibent mb-2">Featured Item 3</h3>
+                        <p class="text-gray-600 mb-4">Stylish and functional design</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold primary-text">$79.99</span>
+                            <button class="secondary-bg text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Product 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Featured Item 4</h3>
+                        <p class="text-gray-600 mb-4">Latest technology and innovation</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold primary-text">$199.99</span>
+                            <button class="secondary-bg text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="primary-bg text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                    View All Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Shop by Category</h2>
+                <p class="text-xl text-gray-600">Find exactly what you're looking for</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300" 
+                         alt="Category 1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h3 class="text-2xl font-bold mb-2">Electronics</h3>
+                            <p class="text-sm opacity-90">Latest gadgets and tech</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300" 
+                         alt="Category 2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h3 class="text-2xl font-bold mb-2">Fashion</h3>
+                            <p class="text-sm opacity-90">Trendy clothing and accessories</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300" 
+                         alt="Category 3" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h3 class="text-2xl font-bold mb-2">Home & Garden</h3>
+                            <p class="text-sm opacity-90">Everything for your home</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="About Us" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">About {{businessName}}</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">{{businessDescription}}</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">We pride ourselves on offering high-quality products, exceptional customer service, and competitive prices. Our team is dedicated to helping you find exactly what you need.</p>
+                    
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold primary-text mb-2">10,000+</div>
+                            <div class="text-gray-600">Happy Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold primary-text mb-2">5,000+</div>
+                            <div class="text-gray-600">Products</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
+                <p class="text-xl text-gray-600">We go above and beyond for our customers</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="primary-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shipping-fast text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Fast Shipping</h3>
+                    <p class="text-gray-600">Quick and reliable delivery to your doorstep</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="secondary-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Quality Guarantee</h3>
+                    <p class="text-gray-600">100% satisfaction guarantee on all products</p>
+                </div>
+                
+                <div class="primary-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-headset text-white text-2xl"></i>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-lg font-semibold mb-2">24/7 Support</h3>
+                    <p class="text-gray-600">Always here to help with any questions</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="secondary-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-undo text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Easy Returns</h3>
+                    <p class="text-gray-600">Hassle-free returns within 30 days</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{#if includeContactForm}}
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600">Have questions? We'd love to hear from you.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-1">
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="primary-bg w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-store text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Visit Our Store</h3>
+                                <p class="text-gray-600">{{address}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="primary-bg w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Call Us</h3>
+                                <p class="text-gray-600">{{phone}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="primary-bg w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Email Us</h3>
+                                <p class="text-gray-600">{{email}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-2">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50" style="focus:ring-color: var(--primary-color);">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                    <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50" style="focus:ring-color: var(--primary-color);">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50" style="focus:ring-color: var(--primary-color);">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50" style="focus:ring-color: var(--primary-color);" placeholder="How can we help you?"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full primary-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        {{#if logo}}
+                        <img src="{{logo}}" alt="{{businessName}} Logo" class="h-8 w-auto mr-3">
+                        {{/if}}
+                        <span class="text-xl font-bold">{{businessName}}</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">{{businessDescription}}</p>
+                    {{#if includeSocial}}
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    {{/if}}
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white">Electronics</a></li>
+                        <li><a href="#" class="hover:text-white">Fashion</a></li>
+                        <li><a href="#" class="hover:text-white">Home & Garden</a></li>
+                        <li><a href="#" class="hover:text-white">Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">Shipping Info</a></li>
+                        <li><a href="#" class="hover:text-white">Returns</a></li>
+                        <li><a href="#" class="hover:text-white">Size Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Store Info</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> {{address}}</p>
+                        <p><i class="fas fa-phone mr-2"></i> {{phone}}</p>
+                        <p><i class="fas fa-envelope mr-2"></i> {{email}}</p>
+                        <p><i class="fas fa-clock mr-2"></i> Mon-Sat: 9AM-8PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; {{currentYear}} {{businessName}}. All rights reserved. | Website by WebPulse AI</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handling
+        document.querySelector('form')?.addEventListener('submit', function(e) {  
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{seoTitle}}</title>
+    {{#if includeSEO}}
+    <meta name="description" content="{{seoDescription}}">
+    <meta property="og:title" content="{{businessName}} - Fine Dining Experience">
+    <meta property="og:description" content="{{seoDescription}}">
+    <meta property="og:type" content="website">
+    {{/if}}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: {{primaryColor}};
+            --secondary-color: {{secondaryColor}};
+        }
+        .primary-bg { background-color: var(--primary-color); }
+        .primary-text { color: var(--primary-color); }
+        .secondary-bg { background-color: var(--secondary-color); }
+        .secondary-text { color: var(--secondary-color); }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Hero Section -->
+    <header class="primary-bg text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative z-10 container mx-auto px-4 py-16 text-center">
+            {{#if logo}}
+            <img src="{{logo}}" alt="{{businessName}} Logo" class="mx-auto mb-6 h-16 w-auto">
+            {{/if}}
+            <h1 class="text-5xl font-bold mb-4">{{businessName}}</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">{{businessDescription}}</p>
+            <div class="space-x-4">
+                <a href="#menu" class="bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    View Menu
+                </a>
+                <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-800 transition-colors">
+                    Reserve Table
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold primary-text mb-6">Welcome to {{businessName}}</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">{{businessDescription}}</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-clock primary-text mr-3"></i>
+                            <span>Monday - Sunday: 11:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone primary-text mr-3"></i>
+                            <span>{{phone}}</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt primary-text mr-3"></i>
+                            <span>{{address}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Restaurant Interior" class="w-full h-96 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview Section -->
+    <section id="menu" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center primary-text mb-12">Our Specialties</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Signature Dish" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Signature Pasta</h3>
+                        <p class="text-gray-600 mb-4">Handmade pasta with our special sauce and fresh ingredients</p>
+                        <span class="secondary-text font-bold text-lg">$24.99</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Grilled Salmon" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Grilled Salmon</h3>
+                        <p class="text-gray-600 mb-4">Fresh Atlantic salmon with seasonal vegetables</p>
+                        <span class="secondary-text font-bold text-lg">$28.99</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Dessert" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Chocolate Mousse</h3>
+                        <p class="text-gray-600 mb-4">Rich chocolate mousse with berry compote</p>
+                        <span class="secondary-text font-bold text-lg">$12.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{#if includeMaps}}
+    <!-- Location Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center primary-text mb-12">Visit Us</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Location & Hours</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt primary-text mr-3"></i>
+                            <span>{{address}}</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone primary-text mr-3"></i>
+                            <span>{{phone}}</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope primary-text mr-3"></i>
+                            <span>{{email}}</span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="font-bold mb-4">Operating Hours</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span>Monday - Thursday</span>
+                                <span>11:00 AM - 9:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Friday - Saturday</span>
+                                <span>11:00 AM - 10:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sunday</span>
+                                <span>12:00 PM - 8:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <iframe src="{{mapEmbedUrl}}" 
+                            width="100%" height="400" style="border:0;" 
+                            allowfullscreen="" loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    {{#if includeContactForm}}
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center primary-text mb-12">Make a Reservation</h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50" style="focus:ring-color: var(--primary-color);">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                            <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50" style="focus:ring-color: var(--primary-color);">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Date</label>
+                            <input type="date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50" style="focus:ring-color: var(--primary-color);">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Time</label>
+                            <select required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50" style="focus:ring-color: var(--primary-color);">
+                                <option value="">Select Time</option>
+                                <option value="6:00 PM">6:00 PM</option>
+                                <option value="6:30 PM">6:30 PM</option>
+                                <option value="7:00 PM">7:00 PM</option>
+                                <option value="7:30 PM">7:30 PM</option>
+                                <option value="8:00 PM">8:00 PM</option>
+                                <option value="8:30 PM">8:30 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Party Size</label>
+                        <select required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50" style="focus:ring-color: var(--primary-color);">
+                            <option value="">Select Party Size</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6+">6+ People</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Special Requests</label>
+                        <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50" style="focus:ring-color: var(--primary-color);" placeholder="Any special dietary requirements or requests..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full primary-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                        Make Reservation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">{{businessName}}</h3>
+                    <p class="text-gray-300 mb-4">{{businessDescription}}</p>
+                    {{#if includeSocial}}
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-yelp"></i></a>
+                    </div>
+                    {{/if}}
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> {{address}}</p>
+                        <p><i class="fas fa-phone mr-2"></i> {{phone}}</p>
+                        <p><i class="fas fa-envelope mr-2"></i> {{email}}</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hours</h3>
+                    <div class="space-y-2 text-gray-300 text-sm">
+                        <div class="flex justify-between">
+                            <span>Mon - Thu</span>
+                            <span>11AM - 9PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Fri - Sat</span>
+                            <span>11AM - 10PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>12PM - 8PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; {{currentYear}} {{businessName}}. All rights reserved. | Website by WebPulse AI</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handling
+        document.querySelector('form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your reservation request! We will contact you shortly to confirm.');
+        });
+    </script>
+</body>
+</html>
